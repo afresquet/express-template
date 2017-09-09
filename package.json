@@ -1,0 +1,44 @@
+{
+  "name": "express-template",
+  "version": "1.0.0",
+  "description": "Template to create Express apps",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp",
+    "test": "mocha",
+    "test:min": "mocha --reporter min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "express-template"
+  },
+  "author": "Alvaro Fresquet",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "i18n": "^0.8.3",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "chai": "^4.1.2",
+    "clipboardy": "^1.1.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-clean-css": "^3.8.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-file": "^0.3.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-yaml": "^1.0.1",
+    "mocha": "^3.5.0"
+  }
+}

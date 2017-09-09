@@ -1,0 +1,16 @@
+// CONTAINER AND VIEWPORT SIZES
+$sizes: (container: (sm: 540px, md: 720px, lg: 960px, xl: 1140px), viewport: (sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+
+\:root
+  @each $name, $size in $sizes
+    @each $subname, $subsize in $size
+      --size-#{$name}-#{$subname}: $subsize
+
+@function size($size, $name: viewport, $value: false) // Function to return number or variable
+  @if $name == container
+    @if $value == true
+      @return map-get(map-get($sizes, $name), $size)
+    @else
+      @return var(--size-#{$name}-#{$size})
+  @else
+    @return map-get(map-get($sizes, $name), $size)

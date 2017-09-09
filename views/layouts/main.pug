@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Express Template
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css")
+    link(rel="stylesheet", href="/css/main.css")    
+  body
+    .content
+      include ../modules/header
+
+      block content
+
+    include ../modules/footer
+    
+    script(type="text/javascript", src="https://code.jquery.com/jquery-3.2.1.slim.min.js", integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", crossorigin="anonymous")
+    script(type="text/javascript", src="/js/main.js")
