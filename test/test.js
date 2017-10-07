@@ -1,6 +1,4 @@
-'use strict';
-
-const expect = require('chai').expect;
+const { expect } = require('chai');
 
 // Test Suite 'describe('suit name', callback)' --- CAN be nested
 describe('npm test', () => {

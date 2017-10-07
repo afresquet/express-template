@@ -1,8 +1,6 @@
-'use strict';
-
 // Requires
 const mongoose = require('mongoose'),
-      bcrypt   = require('bcrypt'),
+      bcrypt = require('bcrypt'),
       error = require('../helpers/error');
 
 // Create Schema
@@ -29,7 +27,7 @@ const ExampleSchema  = new mongoose.Schema({
 });
 
 // Hash password before saving to database
-ExampleSchema.pre('save', (next) => {
+ExampleSchema.pre('save', next => {
   bcrypt.hash(this.password, 10, (err, hash) => {
     if (err) next(err);
 
@@ -65,8 +63,8 @@ module.exports = Example;
 // ***************************************************************** //
 
 // CONNECT TO MONGODB AND ADD SESSIONS (app.js)
-const mongoose   = require('mongoose'),
-      session    = require('express-sessions'),
+const mongoose = require('mongoose'),
+      session = require('express-sessions'),
       MongoStore = require('connect-mongo')(session);
 
 // Connect to database
@@ -75,9 +73,7 @@ const db = mongoose.connection;
 // Handle error
 db.on('error', console.error.bind(console, 'Connection Error:'));
 // Log 'connected' once when connection is open
-db.once('open', () => {
-  console.log('Connected to the database');
-});
+db.once('open', () => console.log('Connected to the database'));
 
 // Use sessions for tracking logins
 app.use(session({
@@ -106,7 +102,11 @@ const Example = require('../models/Example'),
 // Register example and store it in the database
 router.post('/example', (req, res, next) => {
   // Check if all fields were filled
-  if (req.body.name && req.body.age && req.body.email && req.body.password && req.body.confirmPassword) {
+  if (req.body.name &&
+      req.body.age &&
+      req.body.email &&
+      req.body.password &&
+      req.body.confirmPassword) {
     // Check if passwords match
     if (req.body.password !== req.body.confirmPassword) next(error(400, 'Passwords don\'t match'));
     

@@ -1,10 +1,7 @@
-'use strict';
-
 const browserSync = require('browser-sync');
 
 // COMPILE SASS
-module.exports = (gulp) => {
-  return () => {
+module.exports = gulp => () => {
     browserSync.init(null, {
       proxy: "http://localhost:3000",
       files: ["./views/**", "./public/css/**", './public/img/**'],
@@ -12,4 +9,3 @@ module.exports = (gulp) => {
       port: 4000
     });
   };
-};

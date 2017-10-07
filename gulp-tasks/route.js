@@ -1,5 +1,3 @@
-'use strict';
-
 const fs = require('fs'),
       file = require('gulp-file'),
       clipboardy = require('clipboardy');
@@ -7,9 +5,7 @@ const fs = require('fs'),
 let name = process.argv.splice(4).toString();
 
 let jsContent =
-`'use strict';
-  
-const router = require('express').Router();
+`const router = require('express').Router();
   
 router.get('/', (req, res) => res.render('${name}', { t: res.__ }));
   
@@ -29,8 +25,7 @@ block content
 let sassContent = `section.${name}`;
 
 // CREATE ROUTE FILES
-module.exports = (gulp) => {
-  return () => {
+module.exports = gulp => () => {
     fs.access(`./routes/${name}.js`, (fileNotExists) => {
       if (fileNotExists) {
         file(`${name}.js`, jsContent)

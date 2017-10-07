@@ -1,17 +1,14 @@
-'use strict';
-
 const nodemon = require('gulp-nodemon'),
       browserSync = require('browser-sync');
 
 let browserReloadDelay = 500;
 
 // NODEMON
-module.exports = (gulp) => {
-  return (cb) => {
+module.exports = gulp => cb => {
     var started = false;
     
     return nodemon({
-      script: 'index.js'
+      script: 'app.js'
     }).on('start', () => {
       if (!started) {
         cb();
@@ -25,4 +22,3 @@ module.exports = (gulp) => {
       }, browserReloadDelay);
     });
   };
-};

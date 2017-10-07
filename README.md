@@ -142,23 +142,8 @@ The resulting files go to `./public/css/`.
 This task is found in `./gulp-tasks/javascript.js` and does the following:
 
 1. Concatenates all provided files into a single one.
-2. Converts file to ES5 (couldn't get it to work with the minifier nor the sourcemaps without this ¯\\\_(ツ)_/¯).
-3. Minifies the file to make its size smaller.
-4. Creates a sourcemap for clarity.
-
-To know what files the task should concatenate, they need their path to be declared in the _files_ array at the task file:
-
-```javascript
-const files = [
-  'assets/js/tools/jQuery-begin.js',
-  'assets/js/_vars.js',
-  // Files go here
-  'assets/js/_events.js',
-  'assets/js/tools/jQuery-end.js'
-];
-```
-
-Adding a file to the array requires a Gulp restart.
+2. Minifies the file to make its size smaller.
+3. Creates a sourcemap for clarity.
 
 The resulting files go to `./public/js/`.
 
