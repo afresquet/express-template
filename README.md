@@ -1,10 +1,6 @@
 # My Express Template
 
-This is the template that I use to create Express applications.
-
-Probably some things could be better, it's just a learning project but I'll update it as I learn more stuff.
-
-Any feedback is appreciated.
+An Express Template I did to learn some coding and GitHub stuff, there are many wrong things with it so it shouldn't be used.
 
 ---
 
